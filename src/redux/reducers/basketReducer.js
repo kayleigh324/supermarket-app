@@ -6,7 +6,7 @@ const basketReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TO_BASKET':
       const existingItem = state.items.find((item) => item.id === action.payload.id);
-
+    //check if item already exists in basket, add quantity 
       if (existingItem) {
         return {
           ...state,
@@ -20,7 +20,7 @@ const basketReducer = (state = initialState, action) => {
           items: [...state.items, { ...action.payload, quantity: 1 }],
         };
       }
-
+      //reducer to remove from basket, reducing quantity, then item once it is 1
     case 'REMOVE_FROM_BASKET':
       const updatedItems = state.items.reduce((acc, item) => {
         if (item.id === action.payload.id && item.quantity > 1) {
