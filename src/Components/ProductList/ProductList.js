@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import ProductDetail from '../ProductDetail/ProductDetail';
+import Basket from '../Basket/Basket'; 
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const dispatch = useDispatch();
 
- 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,15 +24,18 @@ const ProductList = () => {
     fetchData();
   }, []);
 
-
   if (error) {
     return <div>Error: {error}</div>;
   }
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
+    dispatch({ type: 'ADD_TO_BASKET', payload: product });
   };
 
+  const handleRemoveFromBasket = (product) => {
+    dispatch({ type: 'REMOVE_FROM_BASKET', payload: product });
+  };
 
   return (
     <div>
@@ -44,7 +49,14 @@ const ProductList = () => {
               </li>
             ))}
           </ul>
-          {selectedProduct && <ProductDetail product={selectedProduct} />}
+          {selectedProduct && (
+            <ProductDetail
+              product={selectedProduct}
+              onRemoveFromBasket={handleRemoveFromBasket}
+            />
+          )}
+          
+          <Basket items={products} onRemoveFromBasket={handleRemoveFromBasket} />
         </>
       ) : (
         <div>No products available.</div>
@@ -54,5 +66,4 @@ const ProductList = () => {
 };
 
 export default ProductList;
-
 
