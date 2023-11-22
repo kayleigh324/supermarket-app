@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Basket = ({ onRemoveFromBasket }) => {
-  const items = useSelector((state) => state.basket.items);
+  const items = useSelector((state) => state.basket.items) || [];
 
   return (
     <div>
