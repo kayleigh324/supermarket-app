@@ -10,7 +10,8 @@ const Basket = ({ onRemoveFromBasket }) => {
       <h2>Basket</h2>
       <ul>
         {items.map((item) => (
-          <li key={item.id}>{item.name} - ${item.price}
+          <li key={item.id}>
+            {item.name} - ${item.price} (Quantity: {item.quantity})
           <button onClick={() => onRemoveFromBasket(item)}>Remove</button>
           </li>
         ))}
