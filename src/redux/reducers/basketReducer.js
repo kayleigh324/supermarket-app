@@ -1,4 +1,4 @@
-const initialState = {
+  const initialState = {
     items: [],
   };
   
@@ -9,7 +9,12 @@ const initialState = {
           ...state,
           items: [...state.items, action.payload],
         };
-      // Add more cases for other actions if needed
+      case 'REMOVE_FROM_BASKET':
+        const updatedItems = state.items.filter(item => item.id !== action.payload.id);
+        return {
+          ...state,
+          items: updatedItems,
+        };
       default:
         return state;
     }
