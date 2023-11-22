@@ -34,10 +34,6 @@ const ProductList = () => {
     dispatch({ type: 'ADD_TO_BASKET', payload: product });
   };
 
-  const handleRemoveFromBasket = (product) => {
-    dispatch({ type: 'REMOVE_FROM_BASKET', payload: product });
-  };
-//calling Basket through here instead of App.js for props to provide cleaner code
   return (
     <div>
       <h1>Product List</h1>
@@ -51,13 +47,9 @@ const ProductList = () => {
             ))}
           </ul>
           {selectedProduct && (
-            <ProductDetail
-              product={selectedProduct}
-              onRemoveFromBasket={handleRemoveFromBasket}
-            />
+            <ProductDetail product={selectedProduct} />
           )}
-          
-          <Basket items={products} onRemoveFromBasket={handleRemoveFromBasket} />
+          <Basket />
         </>
       ) : (
         <div>No products available.</div>
@@ -67,4 +59,3 @@ const ProductList = () => {
 };
 
 export default ProductList;
-
