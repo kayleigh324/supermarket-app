@@ -18,7 +18,8 @@ const composeEnhancers =
 
 const store = createStore(
   persistedReducer,
-  composeEnhancers(applyMiddleware(loggerMiddleware, thunk))
+  //composeEnhancers(applyMiddleware(loggerMiddleware, thunk))
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 const persistor = persistStore(store);
