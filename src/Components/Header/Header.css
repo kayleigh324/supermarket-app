@@ -1,3 +1,5 @@
+/* Header.css 
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,6 +7,10 @@
   padding: 1rem;
   background-color: #333;
   color: white;
+}
+
+.jss507 {
+  max-width: 100%;
 }
 
 .nav-list {
@@ -17,7 +23,7 @@
 }
 
 .menu-icon {
-  display: none; /* Initially hide the menu icon */
+  display: none;
   flex-direction: column;
   cursor: pointer;
 }
@@ -30,25 +36,8 @@
   transition: 0.4s;
 }
 
-@media only screen and (min-width: 601px) {
-  /* Apply border-radius to buttons on wider screens */
-  .nav-list li a {
-    border-radius: 5px;
-  }
-
-  /* Hide the menu icon on wider screens */
-  .menu-icon {
-    display: none;
-  }
-
-  /* Show the regular navigation list on wider screens */
-  .nav-list {
-    display: flex;
-  }
-}
 
 @media only screen and (max-width: 600px) {
-  /* Hide the regular navigation list on small screens */
   .nav-list {
     display: none;
     flex-direction: column;
@@ -58,26 +47,26 @@
     right: 0;
     background-color: #333;
     text-align: center;
-    border-radius: 10px; /* Add border radius */
-    overflow: hidden; /* Hide overflow */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
   .nav-list.show {
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .menu-icon {
-    display: flex; /* Show the menu icon on small screens */
+    display: flex;
   }
 
   .header.menu-open {
-    /* Remove the height property and adjust other styles */
     flex-direction: column;
     align-items: flex-start;
   }
 
-  /* Button styles */
   .nav-list li {
     margin: 10px 0;
   }
@@ -87,7 +76,7 @@
     padding: 10px;
     color: white;
     text-decoration: none;
-    border-radius: 5px; /* Add border radius */
+    border-radius: 5px;
     background-color: #555;
     transition: background-color 0.3s;
   }
@@ -97,7 +86,6 @@
   }
 
   .menu-icon .bar {
-    /* Adjust styles for bars in the menu icon */
     background-color: white;
     width: 25px;
     height: 3px;
@@ -116,22 +104,237 @@
   .menu-icon .bar.animate:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+.jss507 {
+  max-width: 80px; 
+  height: auto; 
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  margin: 0 10px;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-list.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .header.menu-open {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   .nav-list li {
     margin: 10px 0;
   }
-  
+
   .nav-list li a {
     display: block;
     padding: 10px;
     color: white;
     text-decoration: none;
-    border-radius: 5px; /* Add border radius */
+    border-radius: 5px;
     background-color: #555;
     transition: background-color 0.3s;
   }
-  
+
   .nav-list li a:hover {
     background-color: #777;
+  }
+
+  .menu-icon .bar {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .menu-icon .bar.animate:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-icon .bar.animate:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon .bar.animate:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}*/
+
+/* Header.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+.jss507 {
+  max-width: 80px; /* Adjust the value to your desired width */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  margin: 0 10px;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Adjust styles for smaller screens */
+@media only screen and (max-width: 600px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-list.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .header.menu-open {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+  }
+
+  .nav-list li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #555;
+    transition: background-color 0.3s;
+  }
+
+  .nav-list li a:hover {
+    background-color: #777;
+  }
+
+  .menu-icon .bar {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .menu-icon .bar.animate:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-icon .bar.animate:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon .bar.animate:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+/* Adjust styles for larger screens (laptop size) */
+@media only screen and (min-width: 601px) {
+  .nav-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list li {
+    margin: 0 10px;
+  }
+
+  .menu-icon {
+    display: none;
   }
 }
