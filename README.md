@@ -24,10 +24,20 @@ Update the Basket.js and ProjectList.js to show ensure state is updated when ite
 
 When testing the UI, I noticed some data was not behaving as expected in terms of adding the same component, so updated the state logic to ensure the user can add multiple items of the same item.
 
+Added persister to ensure the items remain in Basket when the page is reloaded. Installed npm install redux redux-persist and updated store.js with persister 
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+Then ensure the store is updated with the logic
+const persistor = persistStore(store);
+
+
 Adding Header.js, ensuring ProductList and Basket are correctly directed in path using React Router and Link
 
-In ProductList.js - removed unnecessary props from ProductDetail component and directly called the Basket component without passing unnecessary props.
+In ProductList.js, removed unnecessary props from ProductDetail and directly called the Basket component without passing unnecessary props.
 
-In Basket.js - removed the dependency on the onRemoveFromBasket prop - dispatched the REMOVE_FROM_BASKET action directly within the handleClick function.
+In Basket.js, removed the dependency on the onRemoveFromBasket prop. REMOVE_FROM_BASKET action directly within the handleClick function.
 
-Added styles with CSS to ensure
+Added styles with CSS to ensure the layout is responsive when on desktop or mobile
+
+Added ProductDetail.test.js test cases
