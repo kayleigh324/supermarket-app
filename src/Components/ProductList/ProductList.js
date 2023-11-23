@@ -54,7 +54,7 @@ const ProductList = () => {
           <ul>
             {filteredProducts.map((product) => (
               <li key={product.id}>
-                <strong>{product.name}</strong> - ${product.price}
+                <strong>{product.name} - ${product.price}</strong>
                 {searchTerm && (
                   <p>{product.description}</p>
                 )}
