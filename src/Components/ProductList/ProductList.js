@@ -40,7 +40,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <h1>Product List</h1>
+      <h1 className='title'>Product List</h1>
       <div className="search-bar-container">
         <input
           type="text"
@@ -48,7 +48,7 @@ const ProductList = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-      </div>
+      </div>  
       {filteredProducts.length > 0 ? (
         <>
           <ul>
@@ -65,7 +65,6 @@ const ProductList = () => {
           {selectedProduct && (
             <ProductDetail product={selectedProduct} />
           )}
-        
         </>
       ) : (
         <div>No products match the search term.</div>
@@ -75,5 +74,3 @@ const ProductList = () => {
 };
 
 export default ProductList;
-
-
