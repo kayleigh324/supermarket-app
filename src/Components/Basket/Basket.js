@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import './Basket.css';
 
 const Basket = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Basket = () => {
 
   return (
     <div>
-      <h2>Basket</h2>
+      <h2 className='basket-title'>Basket</h2>
       <ul>
         {items.map((item) => (
           <li key={item.id}>
