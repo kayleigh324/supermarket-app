@@ -31,7 +31,7 @@
 .bar {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: rgb(31, 3, 3);
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -86,7 +86,7 @@
   }
 
   .menu-icon .bar {
-    background-color: white;
+    background-color: rgb(66, 9, 9);
     width: 25px;
     height: 3px;
     margin: 5px 0;
