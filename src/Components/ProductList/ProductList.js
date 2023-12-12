@@ -55,16 +55,10 @@ const ProductList = () => {
             {filteredProducts.map((product) => (
               <li key={product.id}>
                 <strong>{product.name} - ${product.price}</strong>
-                {searchTerm && (
-                  <p>{product.description}</p>
-                )}
                 <button onClick={() => handleProductClick(product)}>Add to Basket</button>
               </li>
             ))}
           </ul>
-          {selectedProduct && (
-            <ProductDetail product={selectedProduct} />
-          )}
         </>
       ) : (
         <div>No products match the search term.</div>
